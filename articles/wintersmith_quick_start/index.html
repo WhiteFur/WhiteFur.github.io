@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>Wintersmith + Github Pages = Blog - The Wintersmith's blog
+    </title>
+    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Ramblings of an immor(t)al demigod">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <h1>Wintersmith + Github Pages = Blog</h1>
+        <p class="author">Written by <span class="author">whiteFur</span>
+        </p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>很久以前就想弄一個自己的blog，考慮了多個static site generator： Octopress，Pelican， Nikola。
+<span class="more"></span></p>
+<p>Octopress不用說了，應該是目前算最多人用的，用Ruby寫成的，我沒用過。 Pelican則是Python陣營最多人用的。我有試用了一下，很容易上手，pip install&nbsp;Pelican就可以裝起來了。Nikola也是Python寫成的，但我在安裝的過程一直出現error，所以作罷。</p>
+<p>最後為何選擇wintersmith呢？其實是因為我對NodeJS比較熟，一開始只有想到Ruby、Python的static site&nbsp;gererator，完全沒想到NodeJS應該也會有類似的東西，所以就去<span class="caps">GOOGLE</span>了一下，還真的有！選了一個最多人用的(github有超過1,700個star)，不過跟Octopress，Pelican比起來還是小宗。</p>
+<p>這篇就來記錄一下wintersmith的使用方法吧！<br><a href="https://github.com/jnordberg/wintersmith">wintersmith github repo</a>的<span class="caps">README</span>其實就寫得很清楚了。</p>
+<h1 id="-">安裝</h1>
+<p>首先我們要透過npm來安裝Wintersmith,  npm是NodeJS的package manager,&nbsp;如同Python的pip跟Ruby的gem</p>
+<ol>
+<li><p>安裝NodeJS<br> Mac可以用homebrew安裝， <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">其它<span class="caps">OS</span>的package&nbsp;manager也都可以安裝node</a></p>
+</li>
+<li><p>透過npm安裝wintersmith<br> <code>$ npm install -g wintersmith</code></p>
+</li>
+</ol>
+<h1 id="-">開始使用</h1>
+<ol>
+<li><p>選定一個位置建立一個blog project<br> <code>$ wintersmith new &lt;path&gt;</code></p>
+</li>
+<li><p>撰寫文章<br> 來看看剛剛建立的project<br>其中contents/articles為文章內容。每篇文章為一個資料夾，各資料夾下的index.md即為該文章的markdown。wintersmith已經先幫我們建立了五篇範例。
+<img src="/articles/wintersmith_quick_start/tree.PNG" alt="tree"></p>
+</li>
+<li><p>預覽<br> <code>$ wintersmith preview</code>
+<img src="/articles/wintersmith_quick_start/preview.PNG" alt="preview">
+打開browser連到 <code>http://localhost:8080/wintersmithTest</code>就可以看到blog了</p>
+</li>
+<li><p>build<br>剛剛只是預覽而已，我們要透過<code>$ wintersmith build</code>產生出整個blog&nbsp;site的靜態檔案，wintersmith會幫我們產出在build資料夾下。</p>
+</li>
+<li><p>deploy<br>將剛剛build出來的檔案放到web&nbsp;server上就大功告成了！</p>
+</li>
+</ol>
+<p>那不想自己架web server怎麼辦呢？身為一個developer，有個Github account是很正常的，正好Github的Github Pages可以滿足我們的需求。接下來我們就來看看怎麼把website deploy到Github&nbsp;Pages上吧！</p>
+<h1 id="github-pages">Github&nbsp;Pages</h1>
+<ol>
+<li>User or organization site - <code>http://username.github.io/</code>
+必需自己建立一個名為username.github.io的repo。
+<img src="/articles/wintersmith_quick_start/whitefur_repo.PNG" alt="whitefur_repo"></li>
+<li>Project site - <code>http://username.github.io/repo_name/</code></li>
+</ol>
+<p>分為兩種，最大的差別就只是project&nbsp;site的url在最後面會多加一個repo的名字。</p>
+<p>把website local repo push到Github repo 的 gh-pages&nbsp;branch，就可以透過上述的<span class="caps">URL</span>連到website了。</p>
+<h2 id="step-by-step">Step by&nbsp;Step</h2>
+<ol>
+<li>在Github上建立repo</li>
+<li>在一開始用<code>wintersmith new &lt;path&gt;</code>建立的資料夾下執行<br> <code>$ Wintersmith build</code></li>
+<li>在build資料下建立git repo<br> <code>$ cd build</code><br> <code>$ touch README.md</code><br> <code>$ git init</code><br> <code>$ git add . &amp;&amp; git commit -m &quot;my first blog&quot;</code>  </li>
+<li>建立&amp;切換至gh-pages branch<br> <code>git checkout -b gh-pages</code></li>
+<li>push 到 gh-pages<br> <code>$ git remote add origin https://github.com/WhiteFur/whitefur.github.io.git</code><br> <code>$ git push origin gh-pages</code> </li>
+</ol>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">« Full blog</a></div>
+        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com/">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
+This footer text can be edited in about.md</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.</p>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+dolore eu fugiat nulla pariatur.</p>
+<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+deserunt mollit anim id est laborum.</p>
+
+        </section>
+        <section class="copy">
+          <p>&copy; 2014 Someone &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
+          </p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
