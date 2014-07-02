@@ -55,7 +55,7 @@
 &lt;/ol&gt;
 &lt;p&gt;最大的差別就只是project site的url在最後面會多加一個repo的名字。&lt;/p&gt;
 &lt;p&gt;把website local repo push到Github repo就可以透過上述的URL連到website了。&lt;br&gt;(project site必需push到gh-pages branch)&lt;/p&gt;
-&lt;h2 id=&quot;step-by-step-project-site&quot;&gt;Step by Step - project site&lt;/h2&gt;
+&lt;h2 id=&quot;step-by-step-project-site-&quot;&gt;Step by Step - 以project site為例&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;在Github上建立repo&lt;/p&gt;
 &lt;/li&gt;
@@ -73,6 +73,7 @@ $ git add . &amp;amp;&amp;amp; git commit -m &amp;quot;my first blog&amp;quot;
 &lt;li&gt;&lt;p&gt;push gh-pages&lt;br&gt; &lt;code&gt;$ git push origin gh-pages&lt;/code&gt; &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;大功告成！連上 &lt;code&gt;http://username.github.io/repo_name/&lt;/code&gt; 就可以看到自己的Blog囉！&lt;/p&gt;
 </description>
     </item>
   </channel>
