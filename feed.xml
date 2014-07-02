@@ -9,12 +9,51 @@
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>Untitled</title>
+      <title>Wintersmith + Github Pages = Blog</title>
       <link>http://localhost:8080/articles/wintersmith_quick_start/</link>
       <pubDate>Thu, 01 Jan 1970 08:00:00 +0800</pubDate>
       <guid isPermaLink="true">http://localhost:8080/articles/wintersmith_quick_start/</guid>
       <author></author>
-      <description></description>
+      <description>&lt;p&gt;很久以前就想弄一個自己的blog，考慮了多個static site generator： Octopress，Pelican， Nikola。
+&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Octopress不用說了，應該是目前算最多人用的，用Ruby寫成的，我沒用過。 Pelican則是Python陣營最多人用的。我有試用了一下，很容易上手，pip install Pelican就可以裝起來了。Nikola也是Python寫成的，但我在安裝的過程一直出現error，所以作罷。&lt;/p&gt;
+&lt;p&gt;最後為何選擇wintersmith呢？其實是因為我對NodeJS比較熟，一開始只有想到Ruby，Python的static site gererator，完全沒想到NodeJS應該也會有類似的東西，所以就去GOOGLE了一下，還真的有！選了一個最多人用的(github有超過1,700個star)，不過跟Octopress，Pelican比起來還是小宗。&lt;/p&gt;
+&lt;p&gt;這篇就來記錄一下wintersmith的使用方法吧！&lt;br&gt;&lt;a href=&quot;https://github.com/jnordberg/wintersmith&quot;&gt;wintersmith github repo&lt;/a&gt;的README其實就寫得很清楚了。&lt;/p&gt;
+&lt;h1 id=&quot;-&quot;&gt;安裝&lt;/h1&gt;
+&lt;p&gt;首先我們要透過npm來安裝Wintersmith,  npm是NodeJS的package manager, 如同Python的pip跟Ruby的gem&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安裝NodeJS&lt;br&gt; Mac可以用homebrew安裝， &lt;a href=&quot;https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager&quot;&gt;其它OS的package manager也都可以安裝node&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;透過npm安裝wintersmith&lt;br&gt; &lt;code&gt;$ npm install -g wintersmith&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;-&quot;&gt;開始使用&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;選定一個位置建立一個blog project&lt;br&gt; &lt;code&gt;$ wintersmith new &amp;lt;path&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;撰寫文章
+ 來看看剛剛建立的project&lt;br&gt;其中contents/articles為文章內容。每篇文章為一個資料夾，各資料夾下的index.md即為該文章的markdown。wintersmith已經先幫我們建立了五篇範例。
+&lt;img src=&quot;http://localhost:8080/articles/wintersmith_quick_start/tree.PNG&quot; alt=&quot;tree&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;預覽&lt;br&gt; &lt;code&gt;$ wintersmith preview&lt;/code&gt;
+&lt;img src=&quot;http://localhost:8080/articles/wintersmith_quick_start/preview.PNG&quot; alt=&quot;preview&quot;&gt;
+打開browser連到&lt;a href=&quot;http://localhost:8080/wintersmithTest就可以看到blog了&quot;&gt;http://localhost:8080/wintersmithTest就可以看到blog了&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;build&lt;br&gt;剛剛只是預覽而已，我們要透過&lt;code&gt;$ wintersmith build&lt;/code&gt;產生出整個blog site的靜態檔案，wintersmith會幫我們產出在build資料夾下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;deploy&lt;br&gt;將剛剛build出來的檔案放到web server上就大功告成了！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;那不想自己web server怎麼辦呢？身為一個developer，有個Github account是很正常的，正好Github的Github Pages可以滿足我們的需求。接下來我們就來看看怎麼把website deploy到Github Pages上吧！&lt;/p&gt;
+&lt;h1 id=&quot;github-pages&quot;&gt;Github Pages&lt;/h1&gt;
+&lt;p&gt;分為兩種，最大的差別就只是project site的url在最後面會多加一個repo的名字。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;User or organization site - &lt;a href=&quot;http://username.github.io/&quot;&gt;http://username.github.io/&lt;/a&gt;&lt;br&gt;必需自己建立一個名為username.github.io的repo。
+&lt;img src=&quot;http://localhost:8080/articles/wintersmith_quick_start/whitefur_repo.png&quot; alt=&quot;whitefur_repo&quot;&gt;&lt;/li&gt;
+&lt;li&gt;Project site - &lt;a href=&quot;http://username.github.io/repo_name/&quot;&gt;http://username.github.io/repo_name/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;把website local repo push到Github repo 的 gh-pages branch，就可以透過上述的URL連到website了。&lt;/p&gt;
+</description>
     </item>
   </channel>
 </rss>
