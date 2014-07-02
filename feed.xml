@@ -10,9 +10,9 @@
     <language>en</language>
     <item>
       <title>Wintersmith + Github Pages = Blog</title>
-      <link>http://localhost:8080/articles/wintersmith_quick_start/</link>
+      <link>http://localhost:8080/articles/wintersmith_github_pages/</link>
       <pubDate>Wed, 02 Jul 2014 12:01:00 +0800</pubDate>
-      <guid isPermaLink="true">http://localhost:8080/articles/wintersmith_quick_start/</guid>
+      <guid isPermaLink="true">http://localhost:8080/articles/wintersmith_github_pages/</guid>
       <author></author>
       <description>&lt;p&gt;很久以前就想弄一個自己的blog，考慮了多個static site generator： Octopress，Pelican， Nikola。
 &lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
@@ -32,10 +32,10 @@
 &lt;li&gt;&lt;p&gt;選定一個位置建立一個blog project&lt;br&gt; &lt;code&gt;$ wintersmith new &amp;lt;path&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;撰寫文章&lt;br&gt; 來看看剛剛建立的project&lt;br&gt;其中contents/articles為文章內容。每篇文章為一個資料夾，各資料夾下的index.md即為該文章的markdown。wintersmith已經先幫我們建立了五篇範例。
-&lt;img src=&quot;http://localhost:8080/articles/wintersmith_quick_start/tree.PNG&quot; alt=&quot;tree&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;http://localhost:8080/articles/wintersmith_github_pages/tree.PNG&quot; alt=&quot;tree&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;預覽&lt;br&gt; &lt;code&gt;$ wintersmith preview&lt;/code&gt;
-&lt;img src=&quot;http://localhost:8080/articles/wintersmith_quick_start/preview.PNG&quot; alt=&quot;preview&quot;&gt;
+&lt;img src=&quot;http://localhost:8080/articles/wintersmith_github_pages/preview.PNG&quot; alt=&quot;preview&quot;&gt;
 打開browser連到 &lt;code&gt;http://localhost:8080/wintersmithTest&lt;/code&gt;就可以看到blog了&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;build&lt;br&gt;剛剛只是預覽而已，我們要透過&lt;code&gt;$ wintersmith build&lt;/code&gt;產生出整個blog site的靜態檔案，wintersmith會幫我們產出在build資料夾下。&lt;/p&gt;
@@ -45,21 +45,33 @@
 &lt;/ol&gt;
 &lt;p&gt;那不想自己架web server怎麼辦呢？身為一個developer，有個Github account是很正常的，正好Github的Github Pages可以滿足我們的需求。接下來我們就來看看怎麼把website deploy到Github Pages上吧！&lt;/p&gt;
 &lt;h1 id=&quot;github-pages&quot;&gt;Github Pages&lt;/h1&gt;
+&lt;p&gt;有兩種&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;User or organization site - &lt;code&gt;http://username.github.io/&lt;/code&gt;
-必需自己建立一個名為username.github.io的repo。
-&lt;img src=&quot;http://localhost:8080/articles/wintersmith_quick_start/whitefur_repo.PNG&quot; alt=&quot;whitefur_repo&quot;&gt;&lt;/li&gt;
-&lt;li&gt;Project site - &lt;code&gt;http://username.github.io/repo_name/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;User or organization site - &lt;code&gt;http://username.github.io/&lt;/code&gt;&lt;br&gt;必需自己建立一個名為username.github.io的repo。
+&lt;img src=&quot;http://localhost:8080/articles/wintersmith_github_pages/whitefur_repo.PNG&quot; alt=&quot;whitefur_repo&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Project site - &lt;code&gt;http://username.github.io/repo_name/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;分為兩種，最大的差別就只是project site的url在最後面會多加一個repo的名字。&lt;/p&gt;
-&lt;p&gt;把website local repo push到Github repo 的 gh-pages branch，就可以透過上述的URL連到website了。&lt;/p&gt;
-&lt;h2 id=&quot;step-by-step&quot;&gt;Step by Step&lt;/h2&gt;
+&lt;p&gt;最大的差別就只是project site的url在最後面會多加一個repo的名字。&lt;/p&gt;
+&lt;p&gt;把website local repo push到Github repo就可以透過上述的URL連到website了。&lt;br&gt;(project site必需push到gh-pages branch)&lt;/p&gt;
+&lt;h2 id=&quot;step-by-step-project-site&quot;&gt;Step by Step - project site&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;在Github上建立repo&lt;/li&gt;
-&lt;li&gt;在一開始用&lt;code&gt;wintersmith new &amp;lt;path&amp;gt;&lt;/code&gt;建立的資料夾下執行&lt;br&gt; &lt;code&gt;$ Wintersmith build&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;在build資料下建立git repo&lt;br&gt; &lt;code&gt;$ cd build&lt;/code&gt;&lt;br&gt; &lt;code&gt;$ touch README.md&lt;/code&gt;&lt;br&gt; &lt;code&gt;$ git init&lt;/code&gt;&lt;br&gt; &lt;code&gt;$ git add . &amp;amp;&amp;amp; git commit -m &amp;quot;my first blog&amp;quot;&lt;/code&gt;  &lt;/li&gt;
-&lt;li&gt;建立&amp;amp;切換至gh-pages branch&lt;br&gt; &lt;code&gt;git checkout -b gh-pages&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;push 到 gh-pages&lt;br&gt; &lt;code&gt;$ git remote add origin https://github.com/WhiteFur/whitefur.github.io.git&lt;/code&gt;&lt;br&gt; &lt;code&gt;$ git push origin gh-pages&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在Github上建立repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在一開始用&lt;code&gt;wintersmith new &amp;lt;path&amp;gt;&lt;/code&gt;建立的資料夾下執行&lt;br&gt; &lt;code&gt;$ wintersmith build&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在build資料下建立git repo  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd build
+$ touch README.md
+$ git init
+$ git add . &amp;amp;&amp;amp; git commit -m &amp;quot;my first blog&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;建立&amp;amp;切換至gh-pages branch&lt;br&gt; (如果是user or orginization site要用master)
+ &lt;code&gt;git checkout -b gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;push gh-pages&lt;br&gt; &lt;code&gt;$ git push origin gh-pages&lt;/code&gt; &lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
