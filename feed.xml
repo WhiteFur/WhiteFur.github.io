@@ -21,24 +21,42 @@ iframe, audio {
 }
 &lt;/style&gt;
 
-&lt;p&gt;&lt;script&gt;
-function pageScroll() {&lt;/p&gt;
-&lt;p&gt;window.scrollBy(0,50);
-scrolldelay = setTimeout(‘pageScroll()’,200); //Increase this # to slow down, decrease to speed up scrolling&lt;/p&gt;
-&lt;p&gt;}&lt;/p&gt;
-&lt;p&gt;window.onload = pageScroll;
-&lt;/script&gt;
-分手到今天，已經過了一個禮拜了。&lt;/p&gt;
+
+&lt;p&gt;吵架到今天，已經過了快兩個禮拜了。&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;script&gt;
+function pageScroll() {
+
+window.scrollBy(0,50);
+scrolldelay = setTimeout('pageScroll()',200); //Increase this # to slow down, decrease to speed up scrolling
+
+}
+
+window.onload = function(){
+  pageScroll();
+}
+
+&lt;/script&gt;
+
 &lt;iframe src=&quot;https://embed.spotify.com/?uri=spotify:track:1eDJVDyZJO0OAaBXY53Uoe&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
 
-&lt;audio controls autoplay&gt;
+&lt;audio controls autoplay loop&gt;
   &lt;source src=&quot;./Sing_For_Lonely_Souls.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
-&lt;p&gt;我是真的很愛妳，才會願意跑去歐洲找妳，才會願意，在這種時候還放下身段，做第三者在做的事。我試了幾天，我無法再這樣了，當第三者的痛苦真的是我無法承受的，每天只能等著你來聯絡我，明明是我女朋友，我卻要等另一個男人享受完跟妳在一起的時間才能跟妳聯絡上，太痛苦了。是我自己沒有尊重我們分手的事實，還把妳當作我女朋友。&lt;/p&gt;
-&lt;p&gt;我很想念歐洲的那段時間，很像在度甜蜜月，最喜歡佛羅倫斯的民宿，有紅酒跟喝不完的咖啡，每天早上跟晚上都跟妳舒服的做愛，每天看著地圖找尋下一個一起冒險的地點。
-&lt;img src=&quot;https://www.dropbox.com/sh/nsv4tf1bocakfdy/AACoFFet3ZE295p_y6Mnvseda/2013-11-30%2017.48.20.jpg?raw=1&quot; alt=&quot;love you&quot;&gt;&lt;/p&gt;
+&lt;p&gt;原諒我用「吵架」而不是「分手」，因為我一直沒有接受這件事，更別說你跟一個我痛恨至極，履履傷害我的人在一起。&lt;/p&gt;
+&lt;p&gt;這陣子，真的很煎熬，從第一天我撞見你們牽手，你不讓我離開，後來急忙的找我。到第二天讓他對我打兩通電話，第三天他不在身邊你一直找我，第四天你搭計程車來找我大哭，仍然對我說你要跟他在一起。第六天早上你很自然的叫我不要找你，十二點再打給我。第七天久違的午餐，你說你越來越愛他，他等你很久。&lt;/p&gt;
+&lt;p&gt;妳在他對我履次徹底的傷害之後，還是選擇繼續讓他傷害下一次。東部環島的那次，你跟我說他對你做的事，我一直擔心你心裡有陰影，到後來你跟我說妳覺得他很可怕，還在捷運站外面哭著說妳很怕，我也很擔心妳，想要一直保護妳。&lt;/p&gt;
+&lt;p&gt;不知道為什麼你又跟他好了。我不希望你們去吃飯、喝咖啡，你跟我說只是吃個午餐不會怎樣。&lt;/p&gt;
+&lt;p&gt;我們吵架你跟他在一起，沒多久你又跑來我家說你後悔了，結果是因為他騙你說他去洗澡，而不是因為想我才回來。&lt;/p&gt;
+&lt;p&gt;去夏慕尼因為要慶祝他考完。去學校跟他吃飯，U2看電影，妳說是因為我不在。&lt;/p&gt;
+&lt;p&gt;我不是沒有任何表示，只不過你每次對我道歉後我就又抱抱妳沒事了。我不是悶不抗聲，只是沒有對你很強硬而已，我覺得如果你是愛我的，我只要跟你表示不高興，你有道歉就好。我期待著有一天你會停止跟他的糾葛，到頭來，最後居然是我自食惡果。&lt;/p&gt;
+&lt;p&gt;我在想，是不是我比較好欺負。他擔心、他會生氣，你就讓我聯絡不上你。而我，因為太過寵愛妳加上我自己的軟弱，一直對妳心軟。&lt;/p&gt;
+&lt;p&gt;我是真的很愛妳，才會願意跑去歐洲找妳，才會願意，在這種時候還放下身段，做第三者在做的事。&lt;/p&gt;
+&lt;p&gt;我試了幾天，我無法再這樣了，當第三者的痛苦真的是我無法承受的。每天只能等著你來聯絡我，明明是我女朋友，我卻要等另一個男人享受完跟妳在一起的時間才能跟妳聯絡上。太痛苦了。&lt;/p&gt;
+&lt;p&gt;是我自己沒有尊重我們分手的事實，還一廂情願把妳當作我女朋友。&lt;/p&gt;
+&lt;p&gt;我很想念歐洲的那段時間，很像在度蜜月，最喜歡佛羅倫斯的民宿，有紅酒跟喝不完的咖啡，每天早上跟晚上都跟妳舒服的做愛，每天看著地圖找尋下一個一起冒險的地點。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/sh/nsv4tf1bocakfdy/AACoFFet3ZE295p_y6Mnvseda/2013-11-30%2017.48.20.jpg?raw=1&quot; alt=&quot;love you&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/sh/nsv4tf1bocakfdy/AADjFpuH4nuD6l9OJ_-s28Kta/2013-12-01%2019.17.11.jpg?raw=1&quot; alt=&quot;love you&quot;&gt;&lt;/p&gt;
 &lt;p&gt;我想念我們去北投泡溫泉。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/sh/nsv4tf1bocakfdy/AABf59W5rIMbMUSo2pbbq23Va/2014-02-09%2008.41.31.jpg?raw=1&quot; alt=&quot;love you&quot;&gt;&lt;/p&gt;
@@ -53,9 +71,10 @@ scrolldelay = setTimeout(‘pageScroll()’,200); //Increase this # to slow down
 &lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/sh/nsv4tf1bocakfdy/AACSnEIz-1qdYnS5WrbkHINUa/2013-12-07%2000.26.57.jpg?raw=1&quot; alt=&quot;love you&quot;&gt;&lt;/p&gt;
 &lt;p&gt;我想念那些晚上開門讓你上樓的日子，我想念那些早上倒一杯水、買一分蛋餅給妳的日子，我想再繼續載妳去神秘的地方。&lt;/p&gt;
 &lt;p&gt;我擔心你的一切，我擔心你經痛的時候沒人可以像我這樣忍著手燙幫你熱敷，買止痛藥。我擔心你睡過頭的時候沒有人載你去上班。&lt;/p&gt;
-&lt;p&gt;我愛妳，這一年多真的謝謝妳。這個禮拜以來我太沒定性了，我這次不會再軟弱了，我存在你生活中的時間用完了，我擁有你的時間已經到了，就像我要離開米蘭的時候，你還送我到Malpensa，但是最後我們還是得說再見一樣。&lt;/p&gt;
+&lt;p&gt;我愛妳，這一年多真的謝謝妳。這個禮拜以來我太沒定性了，我這次不會再軟弱了，我存在你生活中的時間用完了，我擁有你的時間已經到了，只是我硬生生的多拖了這兩個禮拜。&lt;/p&gt;
+&lt;p&gt;就像我要離開米蘭的時候，你還送我到Malpensa，但是，最後我們還是得說再見。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/sh/nsv4tf1bocakfdy/AADVJLFJrRByTGW0SxeLmkkma/2013-12-08%2017.58.41.jpg?raw=1&quot; alt=&quot;love you&quot;&gt;&lt;/p&gt;
-&lt;p&gt;我每天抱著熊大說老婆也許明天會回來，一絲絲期待你會回頭。可是老婆，對不起，我累了，你已經不是我認識的吳思萍了，我沒辦法再陪妳了，這次不說再見了，我決定，永遠不再愛妳。&lt;/p&gt;
+&lt;p&gt;我每天抱著熊大說老婆也許明天會回來，一絲絲期待你會回頭。可是老婆，對不起，我累了，你已經不是我認識的吳思萍了。我沒辦法再陪妳了。這次不說再見了，我決定，永遠不再愛妳。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/sh/nsv4tf1bocakfdy/AADHI23zQRumm93YKbkYiNvKa/2014-01-25%2010.55.26.jpg?raw=1&quot; alt=&quot;love you&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/sh/nsv4tf1bocakfdy/AADhthNqQ1IRYhoP2R5CGHJ1a/2014-01-25%2015.45.21.jpg?raw=1&quot; alt=&quot;love you&quot;&gt;&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/zBobTcDE0ZI&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
