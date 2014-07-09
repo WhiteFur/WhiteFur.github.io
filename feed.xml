@@ -5,9 +5,62 @@
     <atom:link href="http://localhost:8080/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://localhost:8080</link>
     <description></description>
-    <pubDate>Tue, 08 Jul 2014 16:31:00 +0800</pubDate>
+    <pubDate>Wed, 09 Jul 2014 10:02:00 +0800</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Integrate disqus into wintersmith</title>
+      <link>http://localhost:8080/articles/disqus/</link>
+      <pubDate>Wed, 09 Jul 2014 10:02:00 +0800</pubDate>
+      <guid isPermaLink="true">http://localhost:8080/articles/disqus/</guid>
+      <author></author>
+      <description>&lt;p&gt;剛架好Wintersmith後發現，咦？奇怪！怎麼沒有留言功能&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;原來留言功能是要另外接上去的，看了很多人Blog，大多數人都用disqus來管理留言。&lt;/p&gt;
+&lt;p&gt;disqus的安裝很簡單&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://disqus.com/&quot;&gt;到disqus註冊&lt;/a&gt;一個website&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://localhost:8080/articles/disqus/register.PNG&quot; alt=&quot;register your website&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;註冊完後，它會列出disqus支援的各家Blog service(ex:Blogger, Wordpress…)，選擇Universal Code，它會給你一段html code, 把它們放到每一頁文章使用的template裡即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我個人是用jade當做template。頁面的metadata如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: Integrate disqus into wintersmith
+author: whiteFur
+date: 2014-07-09 10:02
+template: article.jade
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;所以我必需把disqus embedded code 放到 article.jade&lt;/p&gt;
+&lt;p&gt;jade也可以擺html，但是我喜歡整齊一點，所以把code都轉成jade的格式，放到disqus.jade，再include到article.jade。&lt;/p&gt;
+&lt;p&gt;disqus.jade (把disqus_shortname的值換成step1註冊時填的unique Disqus URL即可)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mixin disqus()
+  div#disqus_thread
+
+  script.
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = &amp;#39;whitefur&amp;#39;; // required: replace example with your forum shortname
+
+    /* * * DON&amp;#39;T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement(&amp;#39;script&amp;#39;); dsq.type = &amp;#39;text/javascript&amp;#39;; dsq.async = true;
+        dsq.src = &amp;#39;//&amp;#39; + disqus_shortname + &amp;#39;.disqus.com/embed.js&amp;#39;;
+        (document.getElementsByTagName(&amp;#39;head&amp;#39;)[0] || document.getElementsByTagName(&amp;#39;body&amp;#39;)[0]).appendChild(dsq);
+    })();
+
+  noscript.
+    Please enable JavaScript to view the &amp;lt;a href=&amp;quot;http://disqus.com/?ref_noscript&amp;quot;&amp;gt;comments powered by Disqus.&amp;lt;/a&amp;gt;&amp;lt;/noscript&amp;gt;
+    &amp;lt;a href=&amp;quot;http://disqus.com&amp;quot; class=&amp;quot;dsq-brlink&amp;quot;&amp;gt;comments powered by &amp;lt;span class=&amp;quot;logo-disqus&amp;quot;&amp;gt;Disqus&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;article.jade&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;block prepend footer
+  include disqus
+
+  div.nav
+    a(href=contents.index.url) « Full blog
+  mixin disqus()
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     <item>
       <title>For my love 思萍</title>
       <link>http://localhost:8080/articles/for_my_love/</link>
@@ -16,7 +69,18 @@
       <author></author>
       <description>&lt;p&gt;分手到今天，已經過了一個禮拜了。&lt;/p&gt;
 &lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;style&gt;
+iframe, audio {
+  display: block;
+  margin: 20px auto;
+}
+&lt;/style&gt;
+
 &lt;iframe src=&quot;https://embed.spotify.com/?uri=spotify:track:1eDJVDyZJO0OAaBXY53Uoe&quot; width=&quot;300&quot; height=&quot;380&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;audio controls autoplay&gt;
+  &lt;source src=&quot;./Sing_For_Lonely_Souls.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;
 
 &lt;p&gt;我是真的很愛妳，才會願意跑去歐洲找妳，才會願意，在這種時候還放下身段，做第三者在做的事。我試了幾天，我無法再這樣了，當第三者的痛苦真的是我無法承受的，每天只能等著你來聯絡我，明明是我女朋友，我卻要等另一個男人享受完跟妳在一起的時間才能跟妳聯絡上，太痛苦了。&lt;/p&gt;
 &lt;p&gt;我很想念歐洲的那段時間，很像在度甜蜜月，最喜歡佛羅倫斯的民宿，有紅酒跟喝不完的咖啡，每天早上跟晚上都跟妳舒服的做愛，每天看著地圖找尋下一個一起冒險的地點。
